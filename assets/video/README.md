@@ -1,26 +1,23 @@
-# Hero-video — sfeerbeeld Den Haag
+# Hero-sfeerbeeld (homepage)
 
-De homepage heeft een filmische hero die een **achtergrondvideo** afspeelt.
+De homepage opent met een **filmisch fotosfeerbeeld**: de hero toont
+`assets/img/facade.jpg` met een langzame inzoom (Ken Burns), met de grote
+titel **LEYEN Lofts.** en de call-to-action eroverheen.
 
-## Video toevoegen
-Plaats hier één bestand met exact deze naam:
+## Het hero-beeld wijzigen
+Vervang het bestand `assets/img/facade.jpg` door je gewenste sfeerfoto
+(liggend, minimaal 1920px breed). Geen code-aanpassing nodig.
 
+## (Optioneel) later toch een video gebruiken
+Een achtergrondvideo kan, maar comprimeer hem dan eerst goed
+(< 6 MB, MP4/H.264, 1920×1080). Plaats het bestand als
+`assets/video/leyen-denhaag.mp4` en zet in `index.html` boven
+`.hero-cine-veil` weer een video-element terug:
+
+```html
+<video class="hero-cine-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+  <source src="assets/video/leyen-denhaag.mp4" type="video/mp4">
+</video>
 ```
-assets/video/leyen-denhaag.mp4
-```
 
-De video start dan automatisch, zonder geluid, en herhaalt zich (loop).
-De grote titel **LEYEN Lofts.** en de call-to-action blijven er overheen staan.
-
-## Aanbevelingen
-- **Inhoud:** rustig sfeerbeeld van Den Haag / Leyenburg (skyline, straatbeeld,
-  Zuiderpark, het complex). Cinematisch, niet druk.
-- **Duur:** 10–25 sec, naadloze loop.
-- **Formaat:** MP4 (H.264), liggend 16:9, 1920×1080.
-- **Bestandsgrootte:** comprimeer tot < 6 MB voor snelle laadtijd
-  (bijv. via HandBrake of `ffmpeg -vf scale=1920:-2 -b:v 2500k`).
-
-## Zolang er nog geen video staat
-Dan toont de hero automatisch een langzaam inzoomend foto-sfeerbeeld
-(`assets/img/facade.jpg`). Er hoeft dus niets te breken — je kunt de video
-later toevoegen zonder de code aan te passen.
+De bijbehorende styling (`.hero-cine-video`) staat al klaar in `assets/style.css`.
