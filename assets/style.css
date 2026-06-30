@@ -6,7 +6,8 @@
 :root {
   --sand: #EEE9DD;        /* gebroken wit, hoofd-achtergrond */
   --sand-deep: #DCD4C4;
-  --bone: #E6DFD0;        /* warm gebroken wit, afwisselende secties */
+  --bone: #E6DFD0;        /* warm gebroken wit (manifesto, kaarten) */
+  --stone: #DAD0BB;       /* dieper warm zand → afwisselende secties met contrast */
   --ink: #1F1F1D;
   --ink-soft: #3A3A36;
   --panel: #F4F0E7;       /* lichtste, kaarten */
@@ -150,12 +151,42 @@ nav {
   line-height: 1.3; max-width: 640px; margin-top: 28px; color: var(--ink-soft);
 }
 
-/* Section helpers */
+/* Section helpers — duidelijker blokritme, licht blijft hoofdkleur */
 .section { padding: 120px 32px; }
 .section-sand { background: var(--sand); }
-.section-bone { background: var(--bone); }
+.section-bone { background: var(--stone); }          /* dieper warm → zichtbaar contrast met sand */
 .section-ink { background: var(--ink); color: var(--sand); }
 .section-rust { background: var(--rust); color: var(--ink); }
+.section-green { background: var(--green); color: var(--sand); }
+
+/* Aangrenzende lichte blokken krijgen een haarlijn zodat ze als blok lezen */
+.section-sand + .section-bone,
+.section-bone + .section-sand,
+.section-sand + .section-sand,
+.section-bone + .section-bone { border-top: 1px solid var(--line); }
+
+/* --- Donkere accentband: lichte kaarten poppen, koptekst wordt licht --- */
+.section-ink .eyebrow { color: var(--rust); }
+.section-ink .eyebrow::before { color: var(--rust); }
+.section-ink .section-title { color: var(--sand); }
+.section-ink .section-title em { color: var(--rust); }
+.section-ink .lead,
+.section-ink .section-header-2 .lead { color: rgba(238, 233, 221, 0.72); }
+.section-ink .section-header-2 > div { color: var(--sand); }
+.section-ink .form-note { color: rgba(238, 233, 221, 0.55); }
+.section-ink .btn-outline { color: var(--sand); border-color: rgba(238, 233, 221, 0.6); }
+.section-ink .btn-outline:hover { background: var(--sand); color: var(--ink); border-color: var(--sand); }
+/* gridlijnen die normaal donker zijn, op donkere band juist licht maken */
+.section-ink .map-grid,
+.section-ink .steps,
+.section-ink .quote-grid { background: rgba(238, 233, 221, 0.16); }
+.section-ink .steps,
+.section-ink .quote-grid { border-color: rgba(238, 233, 221, 0.16); }
+/* lichte kaarten op de donkere band houden hun donkere tekst */
+.section-ink .step,
+.section-ink .quote-card,
+.section-ink .map-cell,
+.section-ink .drop-card { color: var(--ink); }
 .eyebrow {
   font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
   margin-bottom: 24px; font-weight: 600; color: var(--green);
