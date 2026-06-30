@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woningzoeker — LEYEN Lofts</title>
+<meta name="description" content="Vind jouw woning bij LEYEN Lofts. Filter op type, slaapkamers, beschikbaarheid en prijs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-marquee">
+    <span>◆ DROP 01 — NOW LIVE</span>
+    <span class="ticker-dot">●</span>
+    <span>40 WONINGEN, ÉÉN ADRES</span>
+    <span class="ticker-dot">●</span>
+    <span>LEYENBURG, DEN HAAG</span>
+  </div>
+  <div class="ticker-marquee">
+    <span>EST. 2026</span>
+  </div>
+</div>
+
+<nav>
+  <a class="logo" href="index.html">LEYEN<span class="logo-lofts">Lofts.</span></a>
+  <button class="nav-toggle" aria-label="Menu openen"><span></span><span></span><span></span></button>
+  <div class="nav-links">
+    <a href="omgeving.html" data-page="omgeving.html">Omgeving</a>
+    <a href="aanbod.html" data-page="aanbod.html">Aanbod</a>
+    <a href="woningzoeker.html" data-page="woningzoeker.html">Woningzoeker</a>
+    <a href="verkoopinformatie.html" data-page="verkoopinformatie.html">Verkoopinformatie</a>
+    <a href="community.html" data-page="community.html">Community</a>
+    <a href="nieuws.html" data-page="nieuws.html">Nieuws</a>
+    <div class="nav-actions">
+      <div class="lang"><span class="active">NL</span><span>EN</span></div>
+      <a class="cta-nav" href="interesse.html">Interesse</a>
+      <a class="btn-outline" href="inloggen.html">Inloggen</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-meta"><span>40 WONINGEN</span><span>DROP 01 LIVE</span><span>FILTER & VIND</span></div>
+  <h1>De <em>woningzoeker.</em></h1>
+  <p class="page-hero-intro">Filter op type, aantal slaapkamers, beschikbaarheid en prijs — en vind de woning die bij je past.</p>
+</section>
+
+<section class="section section-sand">
+  <div class="finder-layout">
+
+    <aside class="filter-panel">
+      <h3>Filter</h3>
+
+      <div class="filter-group">
+        <label>Type</label>
+        <div class="chip-row">
+          <button class="chip active" data-group="type" data-value="all">Alles</button>
+          <button class="chip" data-group="type" data-value="studio">Studio</button>
+          <button class="chip" data-group="type" data-value="appartement">Appartement</button>
+          <button class="chip" data-group="type" data-value="loft">Loft</button>
+          <button class="chip" data-group="type" data-value="penthouse">Penthouse</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label>Slaapkamers</label>
+        <div class="chip-row">
+          <button class="chip active" data-group="beds" data-value="all">Alles</button>
+          <button class="chip" data-group="beds" data-value="1">1</button>
+          <button class="chip" data-group="beds" data-value="2">2</button>
+          <button class="chip" data-group="beds" data-value="3">3+</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label>Beschikbaarheid</label>
+        <div class="chip-row">
+          <button class="chip active" data-group="status" data-value="all">Alles</button>
+          <button class="chip" data-group="status" data-value="live">Live</button>
+          <button class="chip" data-group="status" data-value="optie">Optie</button>
+          <button class="chip" data-group="status" data-value="verkocht">Verkocht</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label>Maximale prijs — <output data-price-out>€ 600K</output></label>
+        <input class="filter-range" type="range" min="200" max="600" step="5" value="600" data-filter="maxPrice">
+      </div>
+
+      <button class="filter-reset" data-finder-reset>↺ Filters wissen</button>
+    </aside>
+
+    <div>
+      <div class="finder-count" data-finder-count></div>
+      <div class="drops-grid" data-finder-grid>
+
+        <a class="drop-card" data-unit data-type="studio" data-beds="1" data-status="live" data-price="315" href="interesse.html">
+          <div class="drop-image img-studio"><div class="drop-badge live">● LIVE</div></div>
+          <div class="drop-num">N° 12 / 40</div>
+          <h3 class="drop-title">Studio<br>47 m²</h3>
+          <div class="drop-meta"><span>1 slaapk.</span><span>1e verd.</span><span>Oost</span></div>
+          <div class="drop-price">€ 285K — 315K</div>
+          <div class="drop-price-note">Voorrang bij inschrijving</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="appartement" data-beds="2" data-status="live" data-price="375" href="interesse.html">
+          <div class="drop-image img-living"><div class="drop-badge live">● LIVE</div></div>
+          <div class="drop-num">N° 07 / 40</div>
+          <h3 class="drop-title">Appartement<br>68 m²</h3>
+          <div class="drop-meta"><span>2 slaapk.</span><span>2e verd.</span><span>Zuid</span></div>
+          <div class="drop-price">€ 345K — 375K</div>
+          <div class="drop-price-note">Voorrang bij inschrijving</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="appartement" data-beds="1" data-status="optie" data-price="335" href="interesse.html">
+          <div class="drop-image img-bedroom"><div class="drop-badge">◆ OPTIE</div></div>
+          <div class="drop-num">N° 19 / 40</div>
+          <h3 class="drop-title">Appartement<br>58 m²</h3>
+          <div class="drop-meta"><span>1 slaapk.</span><span>3e verd.</span><span>West</span></div>
+          <div class="drop-price">€ 310K — 335K</div>
+          <div class="drop-price-note">Onder optie — meld je aan</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="loft" data-beds="2" data-status="live" data-price="465" href="interesse.html">
+          <div class="drop-image img-kitchen"><div class="drop-badge live">● LIVE</div></div>
+          <div class="drop-num">N° 23 / 40</div>
+          <h3 class="drop-title">Loft<br>92 m²</h3>
+          <div class="drop-meta"><span>2 slaapk.</span><span>4e verd.</span><span>Zuidoost</span></div>
+          <div class="drop-price">€ 420K — 465K</div>
+          <div class="drop-price-note">Voorrang bij inschrijving</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="loft" data-beds="3" data-status="optie" data-price="525" href="interesse.html">
+          <div class="drop-image img-living2"><div class="drop-badge">◆ OPTIE</div></div>
+          <div class="drop-num">N° 31 / 40</div>
+          <h3 class="drop-title">Loft<br>108 m²</h3>
+          <div class="drop-meta"><span>3 slaapk.</span><span>5e verd.</span><span>Zuid</span></div>
+          <div class="drop-price">€ 480K — 525K</div>
+          <div class="drop-price-note">Onder optie — meld je aan</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="appartement" data-beds="2" data-status="verkocht" data-price="395" href="interesse.html">
+          <div class="drop-image img-bathroom"><div class="drop-badge sold">● VERKOCHT</div></div>
+          <div class="drop-num">N° 04 / 40</div>
+          <h3 class="drop-title">Appartement<br>72 m²</h3>
+          <div class="drop-meta"><span>2 slaapk.</span><span>1e verd.</span><span>Noord</span></div>
+          <div class="drop-price">€ 365K — 395K</div>
+          <div class="drop-price-note">Verkocht in Drop 01</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="penthouse" data-beds="3" data-status="live" data-price="695" href="interesse.html">
+          <div class="drop-image img-rooftop"><div class="drop-badge live">● LIVE</div></div>
+          <div class="drop-num">N° 40 / 40</div>
+          <h3 class="drop-title">Penthouse<br>146 m²</h3>
+          <div class="drop-meta"><span>3 slaapk.</span><span>6e verd.</span><span>Panorama</span></div>
+          <div class="drop-price">€ 640K — 695K</div>
+          <div class="drop-price-note">Voorrang bij inschrijving</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="studio" data-beds="1" data-status="verkocht" data-price="295" href="interesse.html">
+          <div class="drop-image img-gym"><div class="drop-badge sold">● VERKOCHT</div></div>
+          <div class="drop-num">N° 02 / 40</div>
+          <h3 class="drop-title">Studio<br>44 m²</h3>
+          <div class="drop-meta"><span>1 slaapk.</span><span>BG</span><span>West</span></div>
+          <div class="drop-price">€ 275K — 295K</div>
+          <div class="drop-price-note">Verkocht in Drop 01</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="penthouse" data-beds="3" data-status="optie" data-price="610" href="interesse.html">
+          <div class="drop-image img-facade"><div class="drop-badge">◆ OPTIE</div></div>
+          <div class="drop-num">N° 38 / 40</div>
+          <h3 class="drop-title">Penthouse<br>132 m²</h3>
+          <div class="drop-meta"><span>3 slaapk.</span><span>6e verd.</span><span>Zuidwest</span></div>
+          <div class="drop-price">€ 560K — 610K</div>
+          <div class="drop-price-note">Onder optie — meld je aan</div>
+        </a>
+
+        <a class="drop-card" data-unit data-type="loft" data-beds="2" data-status="live" data-price="445" href="interesse.html">
+          <div class="drop-image img-living"><div class="drop-badge live">● LIVE</div></div>
+          <div class="drop-num">N° 27 / 40</div>
+          <h3 class="drop-title">Loft<br>88 m²</h3>
+          <div class="drop-meta"><span>2 slaapk.</span><span>3e verd.</span><span>Oost</span></div>
+          <div class="drop-price">€ 405K — 445K</div>
+          <div class="drop-price-note">Voorrang bij inschrijving</div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a class="footer-logo" href="index.html">LEYEN<span class="footer-lofts">Lofts.</span></a>
+      <p class="footer-tagline">Jouw adres in Leyenburg, Den Haag. Een gecureerde collectie van veertig woningen, één voor één vrijgegeven.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigatie</h4>
+      <a href="omgeving.html">Omgeving</a>
+      <a href="aanbod.html">Aanbod</a>
+      <a href="woningzoeker.html">Woningzoeker</a>
+      <a href="verkoopinformatie.html">Verkoopinformatie</a>
+      <a href="community.html">Community</a>
+      <a href="nieuws.html">Nieuws</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:hello@leyen.nl">hello@leyen.nl</a>
+      <a href="tel:+31700000000">+31 70 000 0000</a>
+      <a href="#">Medemblikstraat 275</a>
+      <a href="#">2533 Den Haag</a>
+    </div>
+    <div class="footer-col">
+      <h4>Volg</h4>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="interesse.html">Nieuwsbrief</a>
+      <a href="inloggen.html">Inloggen</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 LEYEN Lofts</span>
+    <span>PRIVACY · DISCLAIMER · COOKIES</span>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
