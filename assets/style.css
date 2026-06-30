@@ -30,6 +30,12 @@
   --p-bathroom: url('img/bathroom.jpg');
   --p-studio: url('img/studio.jpg');
   --p-living2: url('img/living2.jpg');
+
+  /* Omgevingsfoto's voor de slider — drop deze bestanden in img/ om ze te tonen */
+  --omg-1: url('img/omgeving-zuiderpark.jpg');
+  --omg-2: url('img/omgeving-winkels.jpg');
+  --omg-3: url('img/omgeving-luchtfoto.jpg');
+  --omg-4: url('img/omgeving-strand.jpg');
 }
 
 /* Foto-helpers (semantisch benoemd → 1 plek om te wisselen) */
@@ -301,6 +307,38 @@ nav {
 .home-intro-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; }
 
 /* =========================================================
+   OMGEVING SLIDER — foto links, tekst rechts, meerdere slides
+   ========================================================= */
+.omg-slider { position: relative; background: var(--bone); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); overflow: hidden; }
+.omg-track { position: relative; }
+.omg-slide { display: grid; grid-template-columns: 1.12fr 1fr; min-height: clamp(380px, 46vw, 560px); position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 0.6s ease; }
+.omg-slide.active { position: relative; opacity: 1; visibility: visible; }
+.omg-img { background-size: cover; background-position: center; background-color: var(--sand-deep); }
+/* echte omgevingsfoto bovenop, bestaande foto eronder als fallback tot het bestand er staat */
+.omg-img.o1 { background-image: var(--omg-1), var(--p-rooftop); }
+.omg-img.o2 { background-image: var(--omg-2), var(--p-kitchen); }
+.omg-img.o3 { background-image: var(--omg-3), var(--p-facade); }
+.omg-img.o4 { background-image: var(--omg-4), var(--p-living); }
+.omg-text { padding: clamp(40px, 5vw, 80px); display: flex; flex-direction: column; justify-content: center; background: var(--bone); }
+.omg-text .eyebrow { margin-bottom: 18px; }
+.omg-text h2 { font-family: var(--display); font-weight: 900; font-size: clamp(30px, 4vw, 52px); line-height: 0.96; letter-spacing: -1.5px; margin-bottom: 16px; }
+.omg-text h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--rust); }
+.omg-text p { font-size: 16px; line-height: 1.65; color: var(--ink-soft); max-width: 460px; margin-bottom: 26px; }
+.omg-meta { display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--green); font-weight: 600; margin-bottom: 26px; }
+.omg-meta span::before { content: '◆'; color: var(--rust); margin-right: 8px; }
+
+/* bediening linksonder over de foto */
+.omg-controls { position: absolute; left: 0; bottom: 0; z-index: 6; display: flex; align-items: center; gap: 16px; background: var(--ink); padding: 14px 18px; }
+.omg-arrow { width: 36px; height: 36px; border: 1px solid rgba(238,233,221,0.4); background: transparent; color: var(--sand); cursor: pointer; font-size: 16px; line-height: 1; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.omg-arrow:hover { background: var(--rust); color: var(--ink); border-color: var(--rust); }
+.omg-arrow:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+.omg-count { font-family: var(--display); font-size: 12px; letter-spacing: 2px; color: var(--sand); font-variant-numeric: tabular-nums; }
+.omg-dots { display: flex; gap: 8px; margin-left: 4px; }
+.omg-dot { width: 9px; height: 9px; border-radius: 50%; border: 1px solid rgba(238,233,221,0.6); background: transparent; cursor: pointer; padding: 0; transition: all 0.2s; }
+.omg-dot.active { background: var(--rust); border-color: var(--rust); }
+.omg-dot:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+
+/* =========================================================
    RELEASE BAR
    ========================================================= */
 .release-bar {
@@ -541,6 +579,9 @@ footer { background: var(--ink); color: rgba(220, 212, 196, 0.6); padding: 80px 
   .specbar-item:nth-child(1), .specbar-item:nth-child(2) { border-bottom: 1px solid rgba(238,233,221,0.14); }
   .home-intro { padding: 64px 24px; }
   .home-intro-grid { grid-template-columns: 1fr; gap: 28px; }
+  .omg-slide { grid-template-columns: 1fr; min-height: 0; }
+  .omg-img { min-height: clamp(240px, 56vw, 360px); }
+  .omg-text { padding: 40px 24px 72px; }
   .section { padding: 80px 24px; }
   .manifesto { padding: 80px 24px; }
   .manifesto-pillars { grid-template-columns: 1fr; gap: 32px; }
