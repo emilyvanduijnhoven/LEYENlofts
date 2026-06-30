@@ -93,6 +93,10 @@ nav {
 .nav-links a.active { color: var(--rust); }
 .nav-links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--rust); }
 
+/* knoppen in de nav houden hun eigen kleur (anders wint .nav-links a) */
+.nav-links a.cta-nav { color: var(--sand); }
+.nav-links a.cta-nav:hover { color: var(--ink); }
+.nav-links a.btn-outline:hover { color: var(--sand); }
 .nav-actions { display: flex; gap: 14px; align-items: center; }
 .lang { display: flex; gap: 8px; font-size: 12px; font-weight: 600; }
 .lang span { cursor: pointer; opacity: 0.45; }
